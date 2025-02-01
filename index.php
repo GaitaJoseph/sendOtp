@@ -41,9 +41,15 @@
                 return;
             }
 
+
+            let formData=new FormData();
+            formData.append("mobile",phoneNumber);
+
             // Make AJAX request to send OTP
-            axios.post('sendOtp.php', {
-                mobile: phoneNumber
+            axios.post('sendOtp.php', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
             })
             .then(function (response) {
                 const data = response.data;

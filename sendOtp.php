@@ -63,7 +63,7 @@ $responseData = json_decode($response, true);
 error_log("API Response: " . print_r($responseData, true));
 
 // Check if the request was successful
-if (isset($responseData['responses']) && $responseData['responses'][0]['respose-code'] == 200) {
+if (isset($responseData['responses']) && $responseData['responses'][0]['response-code'] == 200) {
     // OTP sent successfully
     echo json_encode(['status' => 'success', 'message' => 'OTP sent successfully.']);
 } else {
